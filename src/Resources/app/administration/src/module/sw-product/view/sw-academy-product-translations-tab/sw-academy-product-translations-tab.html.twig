@@ -1,0 +1,49 @@
+{% block swag_multi_language %}
+    <div class="swag-multi-language-tab">
+        <sw-card :title="$t('sw-academy.tagProductTranslationsTab.tabName')"
+                 position-identifier="swag-multi-language-tab"
+        >
+            <template v-if="rows.length">
+                <sw-container columns="1fr" gap="24px">
+                    <sw-card v-for="productTranslationItem in rows"
+                             :key="productTranslationItem.language.id"
+                             :title="productTranslationItem.language.name"
+                    >
+                        <sw-inherit-wrapper
+                                v-model:value="productTranslationItem.translation.name"
+                                :has-parent="false"
+                                :inherited-value="null"
+                        >
+                            <template #content="{ currentValue, updateCurrentValue, isInherited }">
+                                <sw-text-field
+                                        :value="currentValue"
+                                        @update:value="updateCurrentValue"
+                                        :label="$t('sw-product.basicForm.labelTitle')"
+                                        :disabled="isInherited"
+                                />
+                            </template>
+                        </sw-inherit-wrapper>
+
+                        <sw-inherit-wrapper
+                                v-model:value="productTranslationItem.translation.description"
+                                :has-parent="false"
+                                :inherited-value="null"
+                                :label="$t('sw-product.basicForm.labelDescription')"
+                        >
+                            <template #content="{ currentValue, updateCurrentValue, isInherited }">
+                                <sw-text-editor
+                                        :key="isInherited"
+                                        :value="currentValue"
+                                        @update:value="updateCurrentValue"
+                                        sanitize-input
+                                        sanitize-field-name="product_translation.description"
+                                        :disabled="isInherited"
+                                />
+                            </template>
+                        </sw-inherit-wrapper>
+                    </sw-card>
+                </sw-container>
+            </template>
+        </sw-card>
+    </div>
+{% endblock %}

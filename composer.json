@@ -1,0 +1,22 @@
+{
+  "name": "academy/frontend-dev-intermediate-product-translation-tab",
+  "description": "Academy Plugin: Practical Lab - ProductTranslationTab",
+  "type": "shopware-platform-plugin",
+  "version": "1.0.0",
+  "license": "MIT",
+  "require": {
+    "shopware/core": ">=6.7.0"
+  },
+  "extra": {
+    "shopware-plugin-class": "FrontendDevIntermediateProductTranslationTab\\FrontendDevIntermediateProductTranslationTab",
+    "label": {
+      "de-DE": "Frontend Dev Intermediate - ProductTranslationTab",
+      "en-GB": "Frontend Dev Intermediate - ProductTranslationTab"
+    }
+  },
+  "autoload": {
+    "psr-4": {
+      "FrontendDevIntermediateProductTranslationTab\\": "src/"
+    }
+  }
+}

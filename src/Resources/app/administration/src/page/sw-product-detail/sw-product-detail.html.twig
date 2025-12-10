@@ -1,0 +1,14 @@
+{% block sw_product_detail_content_tabs_additional %}
+    {% parent %}
+
+    <sw-tabs-item
+            :route="{
+                name: 'sw.product.detail.productTranslations',
+                params: {
+                    id: $route.params.id
+                }
+            }"
+    >
+        {{ $t('sw-academy.tagProductTranslationsTab.tabName') }}
+    </sw-tabs-item>
+{% endblock %}
