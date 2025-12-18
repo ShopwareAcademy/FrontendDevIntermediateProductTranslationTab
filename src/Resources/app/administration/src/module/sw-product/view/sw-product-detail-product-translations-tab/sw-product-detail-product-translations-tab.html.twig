@@ -5,11 +5,6 @@
         >
             <template v-if="product?.translations?.length">
                 <sw-container columns="1fr" gap="24px">
-                    <p>
-                        Information: This example plugin doesn't support inheritance
-                        behavior for product variants to keep it simple.
-                    </p>
-
                     <sw-card v-for="productTranslationItem in product?.translations"
                              :key="productTranslationItem.language.id"
                              :title="productTranslationItem.language.name"
